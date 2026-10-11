@@ -1,0 +1,21 @@
+{
+  "name": "fe-ui-bt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "puppeteer-core": "^25.13.0",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "three": "^0.186.1"
+  }
+}

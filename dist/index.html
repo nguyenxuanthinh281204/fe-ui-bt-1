@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AETHER — Pure Geometry. Radical Acoustics.</title>
+  <meta name="description" content="Experience next-generation spatial acoustics and minimalist wearable engineering. Inspired by the purity of Apple and the kinetic motion of Nike.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="/assets/index-CEN56_NH.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C0zvMFyX.css">
+</head>
+<body>
+  <!-- Announcement Banner -->
+  <aside class="announcement-bar" id="announcementBar">
+    <div class="announcement-content">
+      <span class="announcement-badge">NEW</span>
+      <span>Introducing <strong>Aura Max 2</strong> with Titanium Acoustic Chamber. Free worldwide express shipping on all orders over <span data-currency-target="150">$150</span>.</span>
+      <a href="#hero" class="announcement-link">Explore now &rarr;</a>
+    </div>
+    <button class="announcement-close" id="closeAnnouncement" aria-label="Dismiss banner">&times;</button>
+  </aside>
+
+  <!-- Sticky Glassmorphism Navigation -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-brand" aria-label="Aether Home">
+        <svg class="brand-glyph" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+          <circle cx="14" cy="14" r="7" stroke="currentColor" stroke-width="2"/>
+          <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+        </svg>
+        <span class="brand-text">AETHER</span>
+      </a>
+
+      <nav class="nav-menu" id="navMenu">
+        <a href="#hero" class="nav-link active">Aura Max</a>
+        <a href="#innovations" class="nav-link">Innovations</a>
+        <a href="#catalog" class="nav-link">Catalog</a>
+        <a href="#customizer" class="nav-link">Studio</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Currency Selector -->
+        <div class="currency-dropdown">
+          <button class="currency-btn" id="currencyBtn" aria-label="Select Currency">
+            <span id="currentCurrency">USD ($)</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="none"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="currency-menu" id="currencyMenu">
+            <button class="currency-option active" data-currency="USD">USD ($)</button>
+            <button class="currency-option" data-currency="VND">VND (₫)</button>
+            <button class="currency-option" data-currency="EUR">EUR (€)</button>
+          </div>
+        </div>
+
+        <!-- Sound FX Toggle -->
+        <button class="nav-icon-btn" id="soundToggle" aria-label="Toggle Sound Effects" title="Haptic Audio Feedback">
+          <svg class="sound-icon-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          <svg class="sound-icon-off hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 5L6 9H2v6h4l5 4V5z"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+        </button>
+
+        <!-- Search Button (Cmd+K) -->
+        <button class="nav-search-btn" id="openSearchBtn" aria-label="Search Catalog" title="Search (⌘K)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <span class="search-hint">Search <kbd>⌘K</kbd></span>
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="nav-icon-btn" id="themeToggle" aria-label="Toggle Theme" title="Toggle Theme">
+          <svg class="theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="theme-icon-light hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+
+        <!-- Cart Button -->
+        <button class="nav-cart-btn" id="openCartBtn" aria-label="Open Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cartCountBadge">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (Apple x Nike Flagship Showcase) -->
+    <section class="hero-section" id="hero">
+      <div class="hero-background-glow" id="heroGlow"></div>
+      
+      <div class="hero-header reveal-item">
+        <span class="hero-tag">FLAGSHIP SPECIFICATION // GEN 2</span>
+        <h1 class="hero-title">AURA MAX 2</h1>
+        <p class="hero-subtitle">Pure Acoustic Silence. Milled Titanium Resonance.</p>
+        <div class="hero-pricing">
+          <span class="hero-price" data-currency-target="549">$549</span>
+          <span class="hero-status"><span class="pulse-dot"></span> In Stock & Ready to Ship</span>
+        </div>
+      <!-- 3D Product Selector Tabs -->
+      <div class="hero-product-tabs reveal-item" role="tablist" aria-label="Select 3D Product">
+        <button class="hero-prod-tab active" data-model="aura-max" id="heroTabMax" role="tab" aria-selected="true">
+          <span>🎧 Aura Max 2</span>
+        </button>
+        <button class="hero-prod-tab" data-model="aura-pods" id="heroTabPods" role="tab" aria-selected="false">
+          <span>🎵 Aura Pods Pro</span>
+        </button>
+        <button class="hero-prod-tab" data-model="aura-watch" id="heroTabWatch" role="tab" aria-selected="false">
+          <span>⌚ Kinetic Watch Ultra</span>
+        </button>
+        <button class="hero-prod-tab" data-model="aura-runner" id="heroTabRunner" role="tab" aria-selected="false">
+          <span>👟 Kinetic Aero Runner</span>
+        </button>
+      </div>
+
+      <!-- Colorway Switcher Selector -->
+      <div class="hero-color-picker reveal-item" id="heroColorPicker">
+        <span class="color-picker-label">Colorway:</span>
+        <div class="color-options" role="radiogroup" aria-label="Choose colorway">
+          <button class="color-chip active" data-color="black" data-image="/assets/images/hero-black.jpg" aria-label="Obsidian Black" title="Obsidian Black">
+            <span class="chip-color" style="background: #111114;"></span>
+            <span class="chip-label">Obsidian Black</span>
+          </button>
+          <button class="color-chip" data-color="silver" data-image="/assets/images/hero-silver.jpg" aria-label="Alpine Silver" title="Alpine Silver">
+            <span class="chip-color" style="background: #e2e4e9;"></span>
+            <span class="chip-label">Alpine Silver</span>
+          </button>
+          <button class="color-chip" data-color="midnight" data-image="/assets/images/hero-midnight.jpg" aria-label="Midnight Indigo" title="Midnight Indigo">
+            <span class="chip-color" style="background: #192338;"></span>
+            <span class="chip-label">Midnight Indigo</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Interactive 3D Hero Stage -->
+      <div class="hero-stage reveal-item" id="heroStage">
+        <div class="stage-ambient-circle"></div>
+        <!-- Three.js 3D Canvas Mount Point -->
+        <div class="hero-3d-wrapper" id="hero3DWrapper">
+          <div id="headphone3DContainer" class="headphone-3d-container"></div>
+
+          <!-- 3D Overlay Interaction HUD -->
+          <div class="hud-3d-bar">
+            <div class="hud-drag-hint">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v8M8 12h8"/></svg>
+              <span>Drag to rotate 360° • Scroll to zoom</span>
+            </div>
+            <div class="hud-buttons">
+              <button class="hud-btn active" id="toggle3dSpinBtn" title="Toggle 360° Auto-Spin" aria-label="Toggle Auto-Spin">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-1.19"/></svg>
+                <span>360° Spin</span>
+              </button>
+              <button class="hud-btn" id="reset3dViewBtn" title="Reset View Angle" aria-label="Reset View">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                <span>Reset</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Interactive Badges -->
+        <div class="floating-badge badge-top-left" id="badgeTopLeft" data-tilt-speed="0.04">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="badge-text">
+            <strong id="badgeTopLeftTitle">Lossless 24-Bit</strong>
+            <span id="badgeTopLeftSubtitle">192kHz Spatial Sound</span>
+          </div>
+        </div>
+
+        <div class="floating-badge badge-bottom-right" id="badgeBottomRight" data-tilt-speed="0.06">
+          <div class="badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="16" height="10" rx="2"/><line x1="22" y1="11" x2="22" y2="13"/></svg>
+          </div>
+          <div class="badge-text">
+            <strong id="badgeBottomRightTitle">48-Hour Reserve</strong>
+            <span id="badgeBottomRightSubtitle">USB-C Quick Boost 10m=5h</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Actions -->
+      <div class="hero-cta-group reveal-item">
+        <button class="btn btn-primary magnetic-btn" id="heroBuyBtn">
+          <span>Add to Bag — <span data-currency-target="549">$549</span></span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <a href="#innovations" class="btn btn-secondary magnetic-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+          <span>Explore Engineering</span>
+        </a>
+      </div>
+
+      <!-- Quick Metrics Strip -->
+      <div class="hero-metrics-strip reveal-item">
+        <div class="metric-item">
+          <div class="metric-val">40mm</div>
+          <div class="metric-label">Custom Titanium Driver</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-val">99.4%</div>
+          <div class="metric-label">Active Noise Reduction</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-val">285g</div>
+          <div class="metric-label">Featherlight Aero Mesh</div>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <div class="metric-val">&lt; 12ms</div>
+          <div class="metric-label">Ultra-Low Lossless Latency</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENTO GRID INNOVATIONS (Apple Keynote Style) -->
+    <section class="section bento-section" id="innovations">
+      <div class="container">
+        <div class="section-tag-row reveal-item">
+          <span class="section-badge">ENGINEERING MASTERY</span>
+        </div>
+        <h2 class="section-title reveal-item">Engineered Beyond Compromise</h2>
+        <p class="section-subtitle reveal-item">Every curve, acoustic valve, and microchip is calibrated for transcendental immersion.</p>
+
+        <div class="bento-grid">
+          <!-- Bento 1: Driver Architecture -->
+          <div class="bento-card bento-wide reveal-item" data-tilt>
+            <div class="bento-card-content">
+              <span class="bento-tag">ACOUSTIC CORE</span>
+              <h3 class="bento-title">40mm Custom Titanium Diaphragm</h3>
+              <p class="bento-desc">Rigid yet ultra-responsive. Delivering ultra-deep bass with vanishingly low distortion across the entire frequency range of 4Hz to 48,000Hz.</p>
+              <div class="interactive-pulse-demo">
+                <div class="pulse-ring pulse-1"></div>
+                <div class="pulse-ring pulse-2"></div>
+                <div class="pulse-ring pulse-3"></div>
+                <div class="pulse-center">40mm</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 2: H3 Chip -->
+          <div class="bento-card reveal-item" data-tilt>
+            <div class="bento-card-content">
+              <span class="bento-tag">COMPUTATIONAL AUDIO</span>
+              <h3 class="bento-title">Aether H3 Neural Chip</h3>
+              <p class="bento-desc">Adjusts EQ curve 48,000 times a second depending on the shape of your ear and glasses fit.</p>
+              <div class="chip-visual">
+                <div class="chip-die">
+                  <span>H3</span>
+                  <div class="chip-trace"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 3: Mesh Band -->
+          <div class="bento-card reveal-item" data-tilt>
+            <div class="bento-card-content">
+              <span class="bento-tag">KINETIC COMFORT</span>
+              <h3 class="bento-title">AeroKnit Suspension Canopy</h3>
+              <p class="bento-desc">Distributes weight seamlessly across the crown. Tested over 12-hour continuous listening sessions without fatigue.</p>
+              <div class="mesh-visual">
+                <svg viewBox="0 0 160 60" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M10 50 Q 80 10 150 50" stroke-linecap="round"/>
+                  <path d="M15 45 Q 80 18 145 45" opacity="0.6"/>
+                  <path d="M20 40 Q 80 26 140 40" opacity="0.3"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bento 4: Spatial Audio -->
+          <div class="bento-card bento-wide reveal-item" data-tilt>
+            <div class="bento-card-content">
+              <span class="bento-tag">SPATIAL TRACKING</span>
+              <h3 class="bento-title">Dynamic 360° Gyroscopic Stage</h3>
+              <p class="bento-desc">Gyroscopes and accelerometers track the subtle movement of your head, anchoring soundscapes naturally in physical room coordinates.</p>
+              <div class="gyro-visual">
+                <div class="gyro-ring gyro-x"></div>
+                <div class="gyro-ring gyro-y"></div>
+                <div class="gyro-ring gyro-z"></div>
+                <div class="gyro-core"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT CATALOG & LINEUP (Nike x Apple Store Vibe) -->
+    <section class="section catalog-section" id="catalog">
+      <div class="container">
+        <div class="section-tag-row reveal-item">
+          <span class="section-badge">COLLECTION 2026</span>
+        </div>
+        <div class="catalog-header-flex reveal-item">
+          <div>
+            <h2 class="section-title">The Complete System</h2>
+            <p class="section-subtitle">Precision instruments designed to elevate your everyday motion and focus.</p>
+          </div>
+          <!-- Filter Tabs -->
+          <div class="catalog-filters" id="catalogFilters" role="tablist">
+            <button class="filter-chip active" data-filter="all">All Ecosystem</button>
+            <button class="filter-chip" data-filter="audio">Acoustics</button>
+            <button class="filter-chip" data-filter="wearables">Wearables</button>
+            <button class="filter-chip" data-filter="performance">Kinetics</button>
+          </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="product-grid" id="productGrid">
+          <!-- Card 1: Aura Max 2 -->
+          <div class="product-card reveal-item" data-category="audio" data-id="aura-max" data-tilt>
+            <div class="product-card-badge">FLAGSHIP</div>
+            <button class="wishlist-btn" aria-label="Add to wishlist" data-wishlist-id="aura-max">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="product-img-frame" data-quickview="aura-max">
+              <button class="card-3d-tag" data-switch-3d="aura-max" title="Inspect in 3D 360°" aria-label="Inspect Aura Max in 3D">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-1.19"/></svg>
+                <span>3D 360°</span>
+              </button>
+              <img src="/assets/images/hero-black.jpg" alt="Aura Max 2" class="product-thumb">
+              <span class="quick-view-hover">Quick View</span>
+            </div>
+            <div class="product-info">
+              <div class="product-meta">Over-Ear Studio // ANC 2.0</div>
+              <h3 class="product-name">Aura Max 2</h3>
+              <p class="product-summary">Ultra-low distortion acoustic chamber carved from aerospace titanium.</p>
+              <div class="product-swatches">
+                <span class="swatch-dot active" style="background:#111114" title="Obsidian"></span>
+                <span class="swatch-dot" style="background:#e2e4e9" title="Silver"></span>
+                <span class="swatch-dot" style="background:#192338" title="Midnight"></span>
+              </div>
+              <div class="product-bottom">
+                <span class="product-price" data-currency-target="549">$549</span>
+                <button class="btn-card-add" data-add-id="aura-max" aria-label="Add Aura Max 2 to bag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Aura Pods Pro -->
+          <div class="product-card reveal-item" data-category="audio" data-id="aura-pods" data-tilt>
+            <div class="product-card-badge">BESTSELLER</div>
+            <button class="wishlist-btn" aria-label="Add to wishlist" data-wishlist-id="aura-pods">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="product-img-frame" data-quickview="aura-pods">
+              <button class="card-3d-tag" data-switch-3d="aura-pods" title="Inspect in 3D 360°" aria-label="Inspect Aura Pods in 3D">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-1.19"/></svg>
+                <span>3D 360°</span>
+              </button>
+              <img src="/assets/images/pods-pro.jpg" alt="Aura Pods Pro" class="product-thumb">
+              <span class="quick-view-hover">Quick View</span>
+            </div>
+            <div class="product-info">
+              <div class="product-meta">True Wireless // Spatial Audio</div>
+              <h3 class="product-name">Aura Pods Pro</h3>
+              <p class="product-summary">Sculpted titanium capsule with active spatial head tracking and 36h case.</p>
+              <div class="product-swatches">
+                <span class="swatch-dot active" style="background:#222226" title="Gunmetal"></span>
+                <span class="swatch-dot" style="background:#d8dadf" title="Platinum"></span>
+              </div>
+              <div class="product-bottom">
+                <span class="product-price" data-currency-target="279">$279</span>
+                <button class="btn-card-add" data-add-id="aura-pods" aria-label="Add Aura Pods Pro to bag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Aura Kinetic Watch -->
+          <div class="product-card reveal-item" data-category="wearables" data-id="aura-watch" data-tilt>
+            <div class="product-card-badge">EDITION</div>
+            <button class="wishlist-btn" aria-label="Add to wishlist" data-wishlist-id="aura-watch">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="product-img-frame" data-quickview="aura-watch">
+              <button class="card-3d-tag" data-switch-3d="aura-watch" title="Inspect in 3D 360°" aria-label="Inspect Kinetic Watch in 3D">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-1.19"/></svg>
+                <span>3D 360°</span>
+              </button>
+              <img src="/assets/images/watch-ultra.jpg" alt="Aura Kinetic Watch Ultra" class="product-thumb">
+              <span class="quick-view-hover">Quick View</span>
+            </div>
+            <div class="product-info">
+              <div class="product-meta">Biometric Wearable // Titanium 49mm</div>
+              <h3 class="product-name">Aura Kinetic Watch Ultra</h3>
+              <p class="product-summary">Nike-inspired sports loop with sapphire crystal and ECG heart telemetry.</p>
+              <div class="product-swatches">
+                <span class="swatch-dot active" style="background:#3a3b40" title="Dark Titanium"></span>
+                <span class="swatch-dot" style="background:#f45b36" title="Solar Orange"></span>
+              </div>
+              <div class="product-bottom">
+                <span class="product-price" data-currency-target="429">$429</span>
+                <button class="btn-card-add" data-add-id="aura-watch" aria-label="Add Aura Kinetic Watch to bag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Kinetic Aero Runner -->
+          <div class="product-card reveal-item" data-category="performance" data-id="aura-runner" data-tilt>
+            <div class="product-card-badge">KINETIC LAB</div>
+            <button class="wishlist-btn" aria-label="Add to wishlist" data-wishlist-id="aura-runner">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </button>
+            <div class="product-img-frame" data-quickview="aura-runner">
+              <button class="card-3d-tag" data-switch-3d="aura-runner" title="Inspect in 3D 360°" aria-label="Inspect Aero Runner in 3D">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-1.19"/></svg>
+                <span>3D 360°</span>
+              </button>
+              <img src="/assets/images/sneaker-aero.jpg" alt="Kinetic Aero Runner" class="product-thumb">
+              <span class="quick-view-hover">Quick View</span>
+            </div>
+            <div class="product-info">
+              <div class="product-meta">Carbon Plate // Engineered FlyKnit</div>
+              <h3 class="product-name">Kinetic Aero Runner</h3>
+              <p class="product-summary">Ultra-responsive curved carbon fiber plate with seamless minimalist mesh.</p>
+              <div class="product-swatches">
+                <span class="swatch-dot active" style="background:#1b1b1e" title="Triple Black"></span>
+                <span class="swatch-dot" style="background:#9ca3af" title="Vapor Silver"></span>
+              </div>
+              <div class="product-bottom">
+                <span class="product-price" data-currency-target="220">$220</span>
+                <button class="btn-card-add" data-add-id="aura-runner" aria-label="Add Kinetic Aero Runner to bag">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                  <span>Add</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE STUDIO CUSTOMIZER (Nike By You / Apple Personalization) -->
+    <section class="section customizer-section" id="customizer">
+      <div class="container">
+        <div class="section-tag-row reveal-item">
+          <span class="section-badge">AETHER STUDIO</span>
+        </div>
+        <h2 class="section-title reveal-item">Make It Singularly Yours</h2>
+        <p class="section-subtitle reveal-item">Personalize finish, cushion texture, and add complimentary laser engraving directly into the titanium frame.</p>
+
+        <div class="customizer-split reveal-item">
+          <!-- Live Preview Canvas -->
+          <div class="customizer-preview-box">
+            <div class="preview-glow" id="customizerGlow"></div>
+            <img src="/assets/images/hero-black.jpg" alt="Customizer preview" id="customizerPreviewImg" class="customizer-img">
+            
+            <!-- Live Engraving Badge on Frame -->
+            <div class="engraving-live-badge" id="engravingBadge">
+              <span class="engraving-watermark">LASER ENGRAVED</span>
+              <span class="engraving-text" id="engravingPreviewText">YOUR NAME</span>
+            </div>
+
+            <div class="custom-specs-pill">
+              <span id="customSummary">Obsidian Black · Carbon Knit · Engraved</span>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="customizer-form">
+            <!-- Step 1: Finish -->
+            <div class="custom-step">
+              <label class="step-label">1. Select Frame Finish</label>
+              <div class="custom-chips-grid">
+                <button class="custom-chip active" data-custom-color="black" data-img="/assets/images/hero-black.jpg">
+                  <span class="chip-dot" style="background:#111114;"></span>
+                  <span>Obsidian Black</span>
+                </button>
+                <button class="custom-chip" data-custom-color="silver" data-img="/assets/images/hero-silver.jpg">
+                  <span class="chip-dot" style="background:#e2e4e9;"></span>
+                  <span>Alpine Silver</span>
+                </button>
+                <button class="custom-chip" data-custom-color="midnight" data-img="/assets/images/hero-midnight.jpg">
+                  <span class="chip-dot" style="background:#192338;"></span>
+                  <span>Midnight Indigo</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2: Cushion Knit -->
+            <div class="custom-step">
+              <label class="step-label">2. Canopy Cushion Fabric</label>
+              <div class="custom-chips-grid">
+                <button class="cushion-chip active" data-cushion="AeroKnit Breathable">AeroKnit (+<span data-currency-target="0">$0</span>)</button>
+                <button class="cushion-chip" data-cushion="Tuscan Nappa Leather" data-extra="40">Nappa Leather (+<span data-currency-target="40">$40</span>)</button>
+                <button class="cushion-chip" data-cushion="Alcantara Performance" data-extra="60">Alcantara (+<span data-currency-target="60">$60</span>)</button>
+              </div>
+            </div>
+
+            <!-- Step 3: Engraving -->
+            <div class="custom-step">
+              <label class="step-label" for="engravingInput">3. Precision Laser Engraving (Free)</label>
+              <div class="engraving-input-wrap">
+                <input 
+                  type="text" 
+                  id="engravingInput" 
+                  maxlength="16" 
+                  placeholder="Type name, initials or emoji (e.g. S. JOBS)" 
+                  autocomplete="off"
+                  class="custom-input"
+                >
+                <span class="char-count" id="charCount">0/16</span>
+              </div>
+              <p class="engraving-note">Engraved directly into the grade-5 titanium chassis with 2000-dpi fiber laser.</p>
+            </div>
+
+            <!-- Customizer Total & Add -->
+            <div class="customizer-checkout-bar">
+              <div class="custom-total-box">
+                <span class="custom-total-label">Total Custom Configuration</span>
+                <span class="custom-total-price" id="customTotalPrice" data-currency-target="549">$549</span>
+              </div>
+              <button class="btn btn-primary" id="addCustomToBagBtn">
+                <span>Add Customized Edition</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS & CRITICAL ACCLAIM (Minimalist Quotes) -->
+    <section class="section press-section">
+      <div class="container">
+        <div class="press-grid reveal-item">
+          <blockquote class="press-card">
+            <p class="press-quote">"The purest expression of acoustic silence since the invention of the transducer."</p>
+            <footer class="press-author">— WIRED MAGAZINE</footer>
+          </blockquote>
+          <blockquote class="press-card">
+            <p class="press-quote">"Apple's minimalist refinement meets Nike's kinetic aggression. Truly extraordinary."</p>
+            <footer class="press-author">— THE VERGE</footer>
+          </blockquote>
+          <blockquote class="press-card">
+            <p class="press-quote">"A masterclass in industrial finish. Titanium feels practically weightless."</p>
+            <footer class="press-author">— DESIGN MILK</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MINIMALIST FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <svg class="brand-glyph" viewBox="0 0 28 28" fill="none" width="22" height="22">
+              <circle cx="14" cy="14" r="13" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3"/>
+              <circle cx="14" cy="14" r="7" stroke="currentColor" stroke-width="2"/>
+              <circle cx="14" cy="14" r="2.5" fill="currentColor"/>
+            </svg>
+            <span>AETHER LABS</span>
+          </div>
+          <p class="footer-tagline">Radical engineering at the intersection of acoustic physics and kinetic movement.</p>
+        </div>
+
+        <!-- Newsletter Sign-up -->
+        <div class="footer-newsletter">
+          <span class="newsletter-title">Stay at the frontier</span>
+          <p class="newsletter-sub">Get private drops, engineering Whitepapers, and sonic firmware upgrades.</p>
+          <form class="newsletter-form" id="newsletterForm">
+            <input type="email" placeholder="Enter your email" required class="newsletter-input" id="newsletterEmail">
+            <button type="submit" class="btn btn-newsletter">Subscribe</button>
+          </form>
+          <span class="newsletter-feedback" id="newsletterFeedback"></span>
+        </div>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>Acoustics</h4>
+          <a href="#hero">Aura Max 2</a>
+          <a href="#catalog">Aura Pods Pro</a>
+          <a href="#innovations">AeroKnit Mesh</a>
+          <a href="#customizer">Studio Customizer</a>
+        </div>
+        <div class="footer-col">
+          <h4>Kinetics</h4>
+          <a href="#catalog">Kinetic Watch Ultra</a>
+          <a href="#catalog">Aero Runner Shoe</a>
+          <a href="#innovations">Carbon Plate Lab</a>
+          <a href="#customizer">Bespoke Finishes</a>
+        </div>
+        <div class="footer-col">
+          <h4>Support & Orders</h4>
+          <a href="#">Track Shipment</a>
+          <a href="#">Warranty & Care</a>
+          <a href="#">Return Policy (30 Days)</a>
+          <a href="#">Contact Concierge</a>
+        </div>
+        <div class="footer-col">
+          <h4>About & Ethics</h4>
+          <a href="#">Acoustic Physics Whitepaper</a>
+          <a href="#">Carbon Zero Initiative</a>
+          <a href="#">Supply Chain Ethics</a>
+          <a href="#">Press Kit 2026</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 AETHER LABS INC. All rights reserved. Designed with obsessive minimalism.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Sale</a>
+          <a href="#">System Status</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SLIDE-OVER SHOPPING BAG DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay">
+    <aside class="cart-drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-label="Shopping Cart">
+      <div class="cart-drawer-header">
+        <div class="cart-header-title">
+          <h3>Review Your Bag</h3>
+          <span class="cart-count-sub" id="cartDrawerCount">(0 items)</span>
+        </div>
+        <button class="cart-close-btn" id="closeCartBtn" aria-label="Close bag">&times;</button>
+      </div>
+
+      <!-- Free Shipping Meter -->
+      <div class="shipping-meter-wrap">
+        <div class="shipping-meter-label" id="shippingMeterLabel">
+          Add <span data-currency-target="150" id="shippingRemaining">$150.00</span> for <strong>Free Express Worldwide Shipping</strong>
+        </div>
+        <div class="shipping-progress-track">
+          <div class="shipping-progress-bar" id="shippingProgressBar" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items Container -->
+      <div class="cart-items-list" id="cartItemsList">
+        <!-- Rendered dynamically via JS -->
+      </div>
+
+      <!-- Cart Drawer Footer -->
+      <div class="cart-drawer-footer">
+        <!-- Coupon input -->
+        <div class="promo-box">
+          <input type="text" placeholder="Promo code (e.g. AURA10)" class="promo-input" id="promoInput">
+          <button class="promo-apply-btn" id="applyPromoBtn">Apply</button>
+        </div>
+        <div class="promo-message" id="promoMessage"></div>
+
+        <div class="cart-breakdown">
+          <div class="cart-row">
+            <span>Subtotal</span>
+            <span id="cartSubtotal" data-currency-target="0">$0.00</span>
+          </div>
+          <div class="cart-row discount-row hidden" id="discountRow">
+            <span>Discount (10% OFF)</span>
+            <span id="cartDiscount">-$0.00</span>
+          </div>
+          <div class="cart-row">
+            <span>Estimated Shipping</span>
+            <span id="cartShipping">Calculated at checkout</span>
+          </div>
+          <div class="cart-row total-row">
+            <span>Estimated Total</span>
+            <span id="cartTotal" data-currency-target="0">$0.00</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+          <span>Proceed to One-Click Checkout</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+        <p class="cart-reassurance">30-day money-back trial · 2-year Apple/Aether warranty · Encrypted checkout</p>
+      </div>
+    </aside>
+  </div>
+
+  <!-- SPOTLIGHT SEARCH MODAL (Cmd + K) -->
+  <div class="search-modal-overlay" id="searchOverlay">
+    <div class="search-dialog" role="dialog" aria-modal="true">
+      <div class="search-input-header">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="spotlightInput" placeholder="Search devices, accessories, specs, or help..." autocomplete="off">
+        <button class="search-modal-close" id="closeSearchBtn">&times;</button>
+      </div>
+      <div class="search-quick-tags">
+        <span>Trending:</span>
+        <button class="tag-pill" data-search-term="Aura Max">Aura Max</button>
+        <button class="tag-pill" data-search-term="Titanium">Titanium</button>
+        <button class="tag-pill" data-search-term="Noise Cancellation">ANC</button>
+        <button class="tag-pill" data-search-term="Runner">Aero Runner</button>
+        <button class="tag-pill" data-search-term="Watch">Kinetic Watch</button>
+      </div>
+      <div class="search-results-list" id="searchResults">
+        <!-- Filtered items render here -->
+      </div>
+      <div class="search-dialog-footer">
+        <span>Press <kbd>Esc</kbd> to close · <kbd>&uarr;&darr;</kbd> to navigate · <kbd>Enter</kbd> to select</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW PRODUCT MODAL -->
+  <div class="quickview-overlay" id="quickViewOverlay">
+    <div class="quickview-modal" role="dialog" aria-modal="true">
+      <button class="modal-close-btn" id="closeQuickViewBtn">&times;</button>
+      <div class="quickview-grid" id="quickViewContent">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT SUCCESS CONFETTI MODAL -->
+  <div class="checkout-modal-overlay" id="checkoutSuccessOverlay">
+    <div class="checkout-modal" role="dialog">
+      <div class="success-icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h2>Order Confirmed</h2>
+      <p class="order-id">Order Reference: <strong id="confirmedOrderNum">#AET-89421</strong></p>
+      <p class="order-desc">Thank you for ordering. Your bespoke titanium audio device is currently being assembled in our cleanroom facility. We have emailed tracking details to you.</p>
+      <button class="btn btn-primary" id="closeCheckoutSuccessBtn">Return to Storefront</button>
+    </div>
+  </div>
+
+  <!-- FLOATING TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+</body>
+</html>
